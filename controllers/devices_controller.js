@@ -1,3 +1,5 @@
+const conndb = require("../database/connection");
+
 exports.getAllDevices = (req, res) => {
     res.json({ "message": "Get all devices from controller" });
 }
