@@ -1,7 +1,14 @@
-const conndb = require("../database/connection");
+const devicesModel = require("../models/device_model")
 
 exports.getAllDevices = (req, res) => {
-    res.json({ "message": "Get all devices from controller" });
+    devicesModel.findAll({
+        attributes: ["id", "name", "serie", "category", "stateDevice"]
+    })
+    .then(data => {
+        console.log(data);
+        res.json({ "message": "Get all devices from controller", "devices": data });
+    })
+    .catch(err => res.status(500).send({ "error": err.parent.sqlMessage }));
 }
 
 exports.getDeviceById = (req, res) => {
