@@ -11,6 +11,9 @@ module.exports =
             serie: Sequelize.STRING,
             category: Sequelize.INTEGER,
             stateDevice: Sequelize.BOOLEAN
+        },
+        {
+            timestamps: false
         }
     );
 
