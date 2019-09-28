@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var controller = require("../controllers/devices_controller")
+var controller = require("../controllers/devices_controller_mysql")
 
 /* GET */
 router.get('/', controller.getAllDevices);

@@ -1,5 +1,5 @@
 const Sequelize = require("sequelize");
-const conndb = require("../database/connection");
+const conndb = require("../../database/connectionMySql");
 
 module.exports = 
     conndb.define(

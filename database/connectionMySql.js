@@ -11,7 +11,7 @@ const conn = new Sequelize(
 );
 
 conn.authenticate()
-    .then(() => console.log('Connection done')) //Cuando cumple la promesa
-    .catch((err) => console.log(`Fail the connection to the dababase ${err}`)); //Cuando incumple la promesa
+    .then(() => console.log('Connection to MySql done')) //Cuando cumple la promesa
+    .catch((err) => console.log(`Fail the connection to My SQL the dababase ${err}`)); //Cuando incumple la promesa
 
 module.exports = conn;

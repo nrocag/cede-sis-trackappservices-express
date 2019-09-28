@@ -1,4 +1,4 @@
-const devicesModel = require("../models/device_model")
+const devicesModel = require("../models/MySql/device_model_mysql")
 
 exports.getAllDevices = (req, res) => {
     devicesModel.findAll({
@@ -34,7 +34,7 @@ exports.updateDevice = (req, res) => {
         },
         {where: { id: req.body.id } }
     )
-        .then((rowsUpdated) => {
+        .then(rowsUpdated => {
             res.json({ "message": `Rows: ${rowsUpdated}, Update device from controller`, "device for update": req.body });
         })
         .catch(err => res.status(500).send({ "error": err.parent.sqlMessage }));
